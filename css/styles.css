@@ -56,6 +56,11 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   text-align: center;
   text-transform: uppercase;
 }
+
+table{
+  margin: 2em;
+
+}
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
@@ -222,10 +227,9 @@ li:hover{
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
-  position: fixed;
+  height: 90.75%;
+  position: absolute;
   right: 0;
-  top: 80px;
   width: 50%;
 }
 .inside #map {
@@ -241,7 +245,7 @@ li:hover{
 #restaurant-name {
   color: #f18200;
   font-family: Arial,sans-serif;
-  font-size: 3.5em;
+  font-size: 2.5em;
   font-weight: 200;
   letter-spacing: 0;
   margin: 15px 0 30px;
@@ -249,11 +253,13 @@ li:hover{
   line-height: 1.1;
 }
 #restaurant-img {
-	width: 100%;
+  width: 100%;
+  height: auto;
+  max-width: calc(100% - 5em);
 }
 #restaurant-address {
   font-size: 28px;
-  margin: 1em 0px;
+  margin: 1em 3px;
   text-align: center;
 }
 #restaurant-cuisine {
@@ -271,16 +277,20 @@ li:hover{
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
   width: 50%;
 }
+
+#restaurant-container{
+ text-align: center;
+}
 #reviews-container {
-  padding: 30px 40px 80px;
+  padding-bottom: 1em;
 }
 #reviews-container h2 {
   color: #f58500;
   font-size: 24pt;
   font-weight: 300;
+  text-align: center;
   letter-spacing: -1px;
   padding-bottom: 1pt;
 }
@@ -327,7 +337,7 @@ li:hover{
 
 /* devices with less than 600px of width */
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 768px) {
 
   .inside header {
     width: 100%;
