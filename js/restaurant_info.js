@@ -34,7 +34,11 @@ initMap = () => {
           DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
         } catch(error) {
           console.log('map could not be found', error);
+          DBHelper.mapOffline();
         }
+      } else{
+        DBHelper.mapOffline();
+
       }
       fillBreadcrumb();
     }
@@ -97,6 +101,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.setAttribute('alt', `${restaurant.name}`);
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;

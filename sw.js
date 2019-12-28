@@ -2,16 +2,17 @@ const appName = "restaurant-reviews";
 const staticCacheName = appName + "-v1.0";
 const contentImgCache = appName + '-images';
 
-let allCaches = [
+var allCaches = [
     staticCacheName,
     contentImgCache
-]
+];
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
         caches.open(staticCacheName).then((cache) => {
             return cache.addAll([
                 '/restaurant.html',
+                '/',
                 '/index.html',
                 '/css/styles.css',
                 '/js/dbhelper.js',
@@ -42,6 +43,7 @@ self.addEventListener('activate', (event) =>  {
         })
     );
 });
+
 
 self.addEventListener('fetch', (event) => {
     const requestUrl = new URL(event.request.url);
